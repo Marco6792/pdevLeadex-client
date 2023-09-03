@@ -13,15 +13,15 @@ import NavBar from "./components/Home/NavBar";
 import Welcomepe from "./pages/Welcomepe";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
+import OnlineCheck from "./scene/OnlineCheck";
 
 const App = () => {
 
   return (
     <BrowserRouter>
-    <header>
-      <NavBar />
-    </header>
     <ToastContainer />
+      <NavBar />
+      <OnlineCheck />
     <Routes >
     
     <Route path="/welcome" element={<Welcomepe />}/>

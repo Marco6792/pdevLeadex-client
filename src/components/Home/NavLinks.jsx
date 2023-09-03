@@ -75,7 +75,7 @@ const { username } = userInfo;
           <motion.button 
            initial={{ y: 90, opacity: 0 }}
            animate={{ y: 0, opacity: 1 }}
-           transition={{ delay: 0.4 }}
+           transition={{ delay: 0.8 }}
            exit={{
              opacity: 0,
              y: 20,
@@ -89,7 +89,7 @@ const { username } = userInfo;
           <motion.button 
                     initial={{ y: 90, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.4 }}
+                    transition={{ delay: 0.7 }}
                     exit={{
                       opacity: 0,
                       y: 90,
@@ -103,7 +103,7 @@ const { username } = userInfo;
           <motion.button 
                  initial={{ y: 90, opacity: 0 }}
                  animate={{ y: 0, opacity: 1 }}
-                 transition={{ delay: 0.4 }}
+                 transition={{ delay: 0.7 }}
                  exit={{
                    opacity: 0,
                    y: 90,
@@ -117,7 +117,7 @@ const { username } = userInfo;
           <motion.button 
             initial={{ y: 90, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 0.6 }}
             exit={{
               opacity: 0,
               y: 90,
@@ -131,26 +131,27 @@ const { username } = userInfo;
           <motion.button 
                     initial={{ y: 90, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.4 }}
+                    transition={{ delay: 0.6 }}
                     exit={{
                       opacity: 0,
                       y: 90,
-                      transition: { ease: "easeInOut", delay: 0.3 },
+                      transition: { ease: "easeInOut", delay: 0.5 },
                     }}
                     onClick={handleToggle}
           >contact us</motion.button>
         </Link>
 
-        <Link className="bg-red-400 py-2 px-3 rounded-md">
+        <Link to='/logout'>
           <motion.button
             initial={{ y: 90, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 0.6 }}
             exit={{
               opacity: 0,
               y: 90,
-              transition: { ease: "easeInOut", delay: 0.1 },
+              transition: { ease: "easeInOut", delay: 0.4 },
             }}
+            className="bg-red-400 py-2 px-3 rounded-md"
             onClick={handleActions}
           >
             Log out
