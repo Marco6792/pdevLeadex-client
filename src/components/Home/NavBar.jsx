@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaBars } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import useMediaQuery from "../../hooks/usemediaQuery";
@@ -10,8 +10,6 @@ import { useDispatch } from "react-redux";
 import { useLogoutMutation } from "../../features/usersApiSlice";
 import { useToggleContex } from "../../hooks/ToggleContextProvider";
 import { actionType } from "../../hooks/reducer";
-import { AnimatePresence } from "framer-motion";
-import OnlineCheck from "../../scene/OnlineCheck";
 import { checkOnlineStatus } from "../../hooks/IsOnline";
 
 const NavBar = () => {
@@ -55,7 +53,7 @@ const NavBar = () => {
       <div
         className={`${
           online ? "text-green-300" : "text-red-400"
-        } sm:hidden absolute top-14 left-10 text-sm`}
+        } :hidden absolute top-14 left-10 text-sm mmd:hidden xms:left-[4.5rem] xms:top-[4rem] md:left-[7rem]`}
       >
         {online ? "online" : "offline"}
       </div>
@@ -143,14 +141,13 @@ const NavBar = () => {
               >
                 <button onClick={handleToggle}>X</button>
               </div>
-            </Bounce>
-            <AnimatePresence>
-              <NavLinks />
-            </AnimatePresence>
+            </Bounce>   
+              <NavLinks />       
           </>
         )}
       </div>
-    </>
+       </>
+
   );
 };
 
