@@ -137,7 +137,7 @@ const NavBar = () => {
               {" "}
               <div
                 className=" z-10 absolute text-4xl top-6 bg-white
-     text-slate-800 py-2 px-4 ring-2 ring-offset-3 ring-offset-red-50 rounded-md font-bold right-8 md:right-[65px] max-xms:px-1 max-xms:text-3xl
+     text-slate-800 py-2 px-4 ring-2 ring-offset-3 ring-offset-red-50 rounded-md font-bold right-8 md:right-[65px] max-xms:right-6 max-xms:text-3xl
      transition-all duration-1000
      "
               >
