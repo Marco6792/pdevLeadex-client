@@ -12,9 +12,10 @@ export default {
       },
       screens:{
         "xms": "450px",
-        "xxms": "200px",
+        "xxms": "290px",
         "mmd": "1000px"
-      }
+      },
+ 
     },
   },
   plugins: [

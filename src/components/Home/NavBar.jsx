@@ -46,24 +46,28 @@ const NavBar = () => {
   const userInfo = localStorage.getItem("userInfo")
     ? JSON.parse(localStorage.getItem("userInfo"))
     : "";
+    
   const { username } = userInfo;
 
   return (
     <>
+      <div className="top-0 w-screen py-4 z-10 fixed shadow-sm bg-white ">
+
       <div
         className={`${
-          online ? "text-green-300" : "text-red-400"
-        } :hidden absolute top-14 left-10 text-sm mmd:hidden xms:left-[4.5rem] xms:top-[4rem] md:left-[7rem]`}
+          online ? "text-green-200" : "text-red-400"
+        } md:hidden fixed top-[2.9rem] left-10 text-sm mmd:hidden xms:left-[4.5rem] xms:top-[3.3rem] md:left-[7rem] shadow-2xl`}
       >
         {online ? "online" : "offline"}
+
       </div>
-      <div className="top-0 w-full py-6 z-10 fixed shadow-sm ">
-        <div className="mx-auto max-xms:w-full max-md:w-[90.777%] max-md:px-3 w-5/6 flex justify-between items-center gap-10 max-md:gap-3">
+
+        <div className="mx-auto max-xms:w-full max-md:w-[90.777%] max-md:px-3 w-5/6 flex justify-between items-center gap-10 max-md:gap-3 ">
           {/*left side Logo */}
           <Link to="/">
             <div className="items-center cursor-pointer">
               <h3
-                className="text-slate-600 text-2xl max-xms:text-xl
+                className="text-slate-600 text-2xl max-xms:text-xl max-xxms:text-sm
           "
               >
                 PDVLEADEX
@@ -79,11 +83,11 @@ const NavBar = () => {
                 <Link to="/courses">courses</Link>
                 <Link to="about">about</Link>
 
-                <Link to="/login">Profile</Link>
-                <Link to="contact-us">contact us</Link>
+                <Link to={username ? "/profile": "/login"}>Profile</Link>
+                <Link to="contact">contact us</Link>
               </div>
               <div className="flex justify-between gap-8 items-center">
-                <Link to="/login" className="capitalize">
+                <Link to="/profile" className="capitalize">
                   {username}
                 </Link>
                 <Link to="/register">
@@ -96,7 +100,8 @@ const NavBar = () => {
                     Log out
                   </Link>
                 ) : (
-                  <Link to="/login">Log In</Link>
+                  <Link to={username ? "/profile": "/login"}>
+                    { username ? "Log out" : "log in"}</Link>
                 )}
               </div>
             </div>
@@ -113,7 +118,7 @@ const NavBar = () => {
                 ) : (
                   <Link
                     to="/login"
-                    className="text-slate-600 text-xl capitalize"
+                    className="text-slate-600 text-xl"
                   >
                     Log in
                   </Link>
@@ -134,15 +139,17 @@ const NavBar = () => {
             <Bounce top>
               {" "}
               <div
-                className=" z-10 absolute text-4xl top-6 bg-white
+                className=" z-50 absolute text-4xl top-6 bg-white
      text-slate-800 py-2 px-4 ring-2 ring-offset-3 ring-offset-red-50 rounded-md font-bold right-8 md:right-[65px] max-xms:right-6 max-xms:text-3xl
      transition-all duration-1000
      "
               >
                 <button onClick={handleToggle}>X</button>
               </div>
-            </Bounce>   
+            </Bounce>
+            <div className="z-40">
               <NavLinks />       
+              </div>   
           </>
         )}
       </div>

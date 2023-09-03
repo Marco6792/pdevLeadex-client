@@ -44,7 +44,7 @@ const OnlineCheck = () => {
         <div
           className={`${
             isOnline ? "text-green-400" : "text-red-400"
-          } fixed bottom-3 left-2/4 px-2 shadow-lg right-2/4 ${isShow ==='hide' ? 'hidden': isShow === 'show' ? "fixed" : ""}`}
+          } tree  z-40  w-fit shadow-lg  ${isShow ==='hide' ? 'hidden': isShow === 'show' ? "fixed" : ""}`}
         >
           {isOnline ? "online" : "offline"}
         </div>

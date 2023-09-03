@@ -3,7 +3,23 @@
 @tailwind components;
 
 @layer base {
-    html {
+    html,body {
         font-family: 'Open Sans', sans-serif;
+        overflow-x: hidden;
+    }
+    body::-webkit-scrollbar {
+        display: none;
+      }
+  }
+
+  @layer components {
+    .video {
+       @apply w-4/5 rounded-md border max-w-xl max-sm:w-24
+    }
+    .tree{
+        @apply fixed z-20  h-fit m-auto inset-x-0 bottom-3 px-5 py-2 bg-white rounded-md 
+    }
+    .tree-two{
+        @apply fixed z-20  h-fit m-auto inset-x-0 inset-y-0 bottom-3 px-5 py-2 rounded-md 
     }
   }
