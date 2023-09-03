@@ -48,7 +48,7 @@ const NavBar = () => {
   const { username } = userInfo;
 
   return (
-    <div className="top-0 w-full py-6 z-10 fixed shadow-sm bg-white">
+    <div className="top-0 w-full py-6 z-10 fixed shadow-md bg-white">
       <div className="mx-auto max-xms:w-screen max-md:w-[90.777%] max-md:px-3 w-5/6 flex justify-between items-center gap-10 max-md:gap-3 ">
         {/*left side Logo */}
         <Link to="/">
