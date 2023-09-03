@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { useLogoutMutation } from "../../features/usersApiSlice";
 import { useToggleContex } from "../../hooks/ToggleContextProvider";
 import { actionType } from "../../hooks/reducer";
+import { AnimatePresence } from "framer-motion";
 
 
 const NavBar = () => {
@@ -132,7 +133,9 @@ const NavBar = () => {
               </button>
             </div>
           </Bounce>
+          <AnimatePresence >
           <NavLinks />
+          </AnimatePresence>
         </>
       )}
     </div>

@@ -63,7 +63,6 @@ const { username } = userInfo;
   };
 
   return (
-    <AnimatePresence>
       <motion.div
         className="flex flex-col h-screen bg-black w-screen items-center absolute left-0 top-0 justify-center text-white space-y-14 text-xl"
         variants={item}
@@ -80,7 +79,7 @@ const { username } = userInfo;
            exit={{
              opacity: 0,
              y: 20,
-             transition: { ease: "easeInOut", delay: 1.4 },
+             transition: { ease: "easeInOut", delay: 1.2 },
            }}
            onClick={handleToggle}
           >Home</motion.button>
@@ -94,7 +93,7 @@ const { username } = userInfo;
                     exit={{
                       opacity: 0,
                       y: 90,
-                      transition: { ease: "easeInOut", delay: 1.2 },
+                      transition: { ease: "easeInOut", delay: 1 },
                     }}
                     onClick={handleToggle}
           >courses</motion.button>
@@ -108,7 +107,7 @@ const { username } = userInfo;
                  exit={{
                    opacity: 0,
                    y: 90,
-                   transition: { ease: "easeInOut", delay: 1 },
+                   transition: { ease: "easeInOut", delay: .7 },
                  }}
                  onClick={handleToggle}
           >About</motion.button>
@@ -118,11 +117,11 @@ const { username } = userInfo;
           <motion.button 
             initial={{ y: 90, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.4 }}
             exit={{
               opacity: 0,
               y: 90,
-              transition: { ease: "easeInOut", delay: 0.6 },
+              transition: { ease: "easeInOut", delay: 0.4 },
             }}
             onClick={handleToggle}
           >Sign up</motion.button>
@@ -132,11 +131,11 @@ const { username } = userInfo;
           <motion.button 
                     initial={{ y: 90, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.6 }}
+                    transition={{ delay: 0.4 }}
                     exit={{
                       opacity: 0,
                       y: 90,
-                      transition: { ease: "easeInOut", delay: 0.4 },
+                      transition: { ease: "easeInOut", delay: 0.3 },
                     }}
                     onClick={handleToggle}
           >contact us</motion.button>
@@ -146,11 +145,11 @@ const { username } = userInfo;
           <motion.button
             initial={{ y: 90, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.6 }}
+            transition={{ delay: 0.4 }}
             exit={{
               opacity: 0,
               y: 90,
-              transition: { ease: "easeInOut", delay: 0.4 },
+              transition: { ease: "easeInOut", delay: 0.1 },
             }}
             onClick={handleActions}
           >
@@ -158,7 +157,6 @@ const { username } = userInfo;
           </motion.button>
         </Link>
       </motion.div>
-    </AnimatePresence>
   );
 };
 
