@@ -10,7 +10,7 @@ import { useDispatch } from "react-redux";
 import { useLogoutMutation } from "../../features/usersApiSlice";
 
 const NavBar = () => {
-  const isAboveMediumScreens = useMediaQuery("(min-width: 900px");
+  const isAboveMediumScreens = useMediaQuery("(min-width: 1000px");
 
   const [isMenueToggled, setIsMenuToggled] = useState(false);
 
@@ -38,11 +38,11 @@ const NavBar = () => {
 
   return (
     <div className="top-0 w-full py-6 z-10 fixed shadow-md bg-white">
-      <div className="mx-auto max-xms:w-screen max-md:w-[90.777%] max-md:px-3 w-5/6 flex justify-between items-center gap-10 max-md:gap-3">
+      <div className="mx-auto max-xms:w-screen max-md:w-[90.777%] max-md:px-3 w-5/6 flex justify-between items-center gap-10 max-md:gap-3 ">
         {/*left side Logo */}
         <Link to="/">
-          <div className="flex items-center space-x-1 cursor-pointer">
-            <div className="rounded-full bg-red-400 h-3 w-3  "></div>
+          <div className="flex items-center space-x-1 cursor-pointer  max-xms:-ml-2">
+            <div className="rounded-full bg-red-400 h-3 w-3"></div>
             <h3
               className="text-slate-600 text-2xl 
           "
@@ -95,8 +95,6 @@ const NavBar = () => {
                 className="text-slate-600 text-xl capitalize"
               >Log in</Link>
               )}
-
-              <hr className="border border-red-400 h-10 absolute left-20" />
               <button
                 className="bg-yellow-300  p-2 rounded-md text-slate-100"
                 onClick={() => setIsMenuToggled(!isMenueToggled)}

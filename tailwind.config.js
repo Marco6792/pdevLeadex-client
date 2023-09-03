@@ -11,7 +11,8 @@ export default {
         "to": "rgba(243, 172, 18, 1) 100%"
       },
       screens:{
-        "xms": "370px"
+        "xms": "450px",
+        "xxms": "200px"
       }
     },
   },
