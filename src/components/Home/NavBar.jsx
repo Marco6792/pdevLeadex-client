@@ -11,13 +11,15 @@ import { useLogoutMutation } from "../../features/usersApiSlice";
 import { useToggleContex } from "../../hooks/ToggleContextProvider";
 import { actionType } from "../../hooks/reducer";
 import { AnimatePresence } from "framer-motion";
-
+import OnlineCheck from "../../scene/OnlineCheck";
+import { checkOnlineStatus} from "../../hooks/IsOnline"
 
 const NavBar = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1000px");
 
   const [{toggle}, dispatch] = useToggleContex()
 
+  const online = checkOnlineStatus()
   
   const handleToggle = () => {
     dispatch({
@@ -48,8 +50,11 @@ const NavBar = () => {
     : "";
   const { username } = userInfo;
 
-  return (
-    <div className="top-0 w-full py-6 z-10 fixed shadow-sm">
+  return (<>
+ <div className={`${online ? "text-green-300" : "text-red-400"} sm:hidden absolute top-14 left-10 text-sm`}>
+{online ? "online" : "offline"}
+ </div>
+    <div className="top-0 w-full py-6 z-10 fixed shadow-sm ">
       <div className="mx-auto max-xms:w-full max-md:w-[90.777%] max-md:px-3 w-5/6 flex justify-between items-center gap-10 max-md:gap-3">
         {/*left side Logo */}
         <Link to="/">
@@ -139,6 +144,7 @@ const NavBar = () => {
         </>
       )}
     </div>
+    </>
   );
 };
 

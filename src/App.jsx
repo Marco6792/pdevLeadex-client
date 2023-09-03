@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {BrowserRouter, Routes, Route, Navigate, redirect} from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -17,11 +17,18 @@ import OnlineCheck from "./scene/OnlineCheck";
 
 const App = () => {
 
+// const [showComp, setShowComp] = useState(true)
+
+// setTimeout(() => {
+//   setShowComp(false)
+// }, 2000);
+
   return (
+    
     <BrowserRouter>
     <ToastContainer />
       <NavBar />
-      <OnlineCheck />
+    <OnlineCheck />
     <Routes >
     
     <Route path="/welcome" element={<Welcomepe />}/>
