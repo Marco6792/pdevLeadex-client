@@ -34,7 +34,6 @@ const NavBar = () => {
     ? JSON.parse(localStorage.getItem("userInfo"))
     : "";
   const { username } = userInfo;
-  console.log(username);
 
   return (
     <div className="top-0 w-full py-6 z-10 fixed shadow-md bg-white">
@@ -44,7 +43,7 @@ const NavBar = () => {
           <div className="flex items-center space-x-1 cursor-pointer  max-xms:-ml-2">
             <div className="rounded-full bg-red-400 h-3 w-3"></div>
             <h3
-              className="text-slate-600 text-2xl 
+              className="text-slate-600 text-2xl max-xms:text-xl
           "
             >
               PDVLEADEX
@@ -96,7 +95,7 @@ const NavBar = () => {
               >Log in</Link>
               )}
               <button
-                className="bg-yellow-300  p-2 rounded-md text-slate-100"
+                className="bg-yellow-300  p-2 max-xms:p-1 rounded-md text-slate-100"
                 onClick={() => setIsMenuToggled(!isMenueToggled)}
               >
                 <FaBars className="text-3xl focus:outline-none" />

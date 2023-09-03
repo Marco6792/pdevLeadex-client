@@ -1,9 +1,7 @@
 import React from "react";
-import Container from "./pages/Container";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Header from "./pages/Header";
 import Home from "./components/Home/Home";
 import FormIndex from "./components/form/FormIndex";
 import Bounce from "react-reveal/Bounce"
@@ -13,10 +11,13 @@ import ProfilePage from "./pages/ProfilePage";
 import CoursePage from "./pages/CoursePage";
 import NavBar from "./components/Home/NavBar";
 
+import { toggleContext } from "./hooks/toggleContext";
 
 const App = () => {
+
   return (
     <BrowserRouter>
+    <toggleContext.Provider value={true}>
     <header>
       <NavBar />
     </header>
@@ -30,6 +31,7 @@ const App = () => {
        <Route path='/profile' element={<ProfilePage />} />
        <Route path='/courses' element={<CoursePage />} />
     </Routes>
+    </toggleContext.Provider>
     </BrowserRouter>
   );
 };

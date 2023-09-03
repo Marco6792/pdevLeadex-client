@@ -27,11 +27,11 @@ const RegisterForm = () => {
     setTogglePwd((togglePwd) => !togglePwd);
   };
 
-  useEffect(() => {
-    // if(userInfo){
-    //   navigate('/')
-    // }
-  }, [navigate, userInfo]);
+  // useEffect(() => {
+  //   if(userInfo){
+  //     navigate('/login')
+  //   }
+  // }, [navigate, userInfo]);
 
   const [disable, setDisable] = useState(true);
 
@@ -49,7 +49,6 @@ const RegisterForm = () => {
     if (credentials.username && credentials.email && credentials.password) {
       setDisable(false);
     }
-    console.log(credentials);
   }, [credentials.username, credentials.email, credentials.password, disable]);
 
   const handFormSubmitClick = async () => {
@@ -60,9 +59,9 @@ const RegisterForm = () => {
       const res = await register({ username, email, password }).unwrap();
       dispatch(setCredentails({ ...res }));
       navigate("/login");
-      toast.success(`welcome ${res.username}`);
+      toast.success(`welcome ${res.username} to Leadex. Login to continue`);
     } catch (error) {
-      toast.error(`user ${username} already exit`);
+      toast.error(`user ${username} with email: ${email} already exit. `);
     }
   };
 
@@ -79,6 +78,8 @@ const RegisterForm = () => {
           <input
             type="text"
             name="username"
+            minLength={4}
+            required
             placeholder="Enter Username"
             onChange={handleForm}
             className="border border-slate-400 py-3 text-xl focus:outline-none rounded-md w-full px-14"
@@ -95,6 +96,7 @@ const RegisterForm = () => {
           <input
             type="email"
             name="email"
+            required
             placeholder="Enter Email"
             onChange={handleForm}
             className="border border-slate-400 py-3 px-14 text-xl focus:outline-none rounded-md w-full"
@@ -110,7 +112,9 @@ const RegisterForm = () => {
         <div className="relative flex flex-col items-center justify-center">
           <input
             type={togglePwd ? "text" : "password"}
-            name="email"
+            name="password"
+            required
+            minLength={4}
             placeholder="Enter Password"
             onChange={handleForm}
             className="border border-slate-400 py-3 px-14 text-xl focus:outline-none rounded-md w-full"

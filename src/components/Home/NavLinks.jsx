@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -6,10 +6,15 @@ import { useLogoutMutation } from "../../features/usersApiSlice";
 import { logout } from "../../features/authSlice";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
+import { toggleContext } from "../../hooks/toggleContext";
 
 const NavLinks = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  
+  const value = useContext(toggleContext)
+
+  console.log(value);
   
   const [isMenueToggled, setIsMenuToggled] = useState(false);
 

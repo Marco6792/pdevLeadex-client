@@ -15,7 +15,7 @@ const LoginForm = () => {
 
   const [login, { isLoading, isSuccess }] = useLoginMutation();
 
-  const [togglePwd, setTogglePwd] = useState(false);
+  const [togglePwd, setTogglePwd] = useState(true);
 
   const handleClickTogglePwd = () => {
     setTogglePwd((togglePwd) => !togglePwd);
@@ -25,11 +25,6 @@ const LoginForm = () => {
 
   const { userInfo } = useSelector((state) => state.auth);
 
-  // useEffect(() =>{
-  //   if(userInfo){
-  //     navigate('/')
-  //   }
-  // }, [navigate, userInfo])
 
   const [credentials, setCredentialState] = useState({
     email: "",
@@ -48,10 +43,12 @@ const LoginForm = () => {
     if (Boolean(credentials.email) && Boolean(credentials.password)) {
       setDisable(false);
     }
-  }, [credentials.email, credentials.password, disable]);
+    console.log(credentials);
+  }, [credentials.email, credentials.password]);
 
   const handFormSubmitClick = async () => {
     // toast.success("your are now Login")
+    console.log(disable);
     try {
       const email = credentials.email;
       const password = credentials.password;
@@ -59,9 +56,6 @@ const LoginForm = () => {
       console.log(res.username);
       toast.success(`welcome ${res.username}`);
       dispatch(setCredentails({ ...res }));
-      if (res) {
-        setSuccess(true);
-      }
       navigate("/");
     } catch (err) {
       toast.error(err?.data?.message || err.data);
@@ -100,13 +94,13 @@ const LoginForm = () => {
         <div className="relative flex flex-col items-center justify-center">
           <input
             type={togglePwd ? "text" : "password"}
-            name="email"
+            name="password"
             placeholder="Enter Password"
             onChange={handleForm}
             className="border border-slate-400 py-3 text-xl focus:outline-none rounded-md w-full px-14"
           />
           <div className="bg-slate-300 absolute p-2 left-0 top-0 bottom-0 rounded-tl-md rounded-bl-md">
-            <FaFingerprint  className="text-2xl mt-2" />
+            <FaFingerprint className="text-2xl mt-2" />
           </div>
           {togglePwd ? (
             <FaEye
@@ -150,3 +144,16 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
+
+// <button
+// type="submit"
+// disabled={disable}
+// onClick={handFormSubmitClick}
+// className={
+//   disable
+//     ? "bg-slate-100 py-4 px-8 text-xl rounded-[50px] text-slate-300 font-semibold"
+//     : "bg-[#f1c40f] py-4 px-8 text-xl rounded-[50px] text-white font-semibold focus:outline-none cursor-pointer "
+// }
+// >
+// Sign in
+// </button>

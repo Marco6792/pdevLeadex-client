@@ -1,10 +1,5 @@
 import React, {createContext} from 'react'
 
 
-const toggleContext = () => {
-  return (
-    <div>toggleContext</div>
-  )
-}
+export const toggleContext = createContext()
 
-export default toggleContext
