@@ -122,7 +122,7 @@ const LoginForm = () => {
           {/* <FaEye  className='absolute right-3 text-xl'/> */}
         </div>
         <div className="py-5 flex items-center justify-between ">
-          <p className="text-base max-sm:w-[170px]">
+          <p className="text-base max-sm:w-[171px]">
             Don't have an account ?
             <Link
               to="/register"
