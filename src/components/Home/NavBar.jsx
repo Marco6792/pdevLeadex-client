@@ -49,7 +49,7 @@ const NavBar = () => {
 
   return (
     <div className="top-0 w-full py-6 z-10 fixed shadow-md bg-white">
-      <div className="mx-auto max-xms:w-screen max-md:w-[90.777%] max-md:px-3 w-5/6 flex justify-between items-center gap-10 max-md:gap-3 ">
+      <div className="mx-auto max-xms:w-screen max-md:w-[90.777%] max-md:px-3 w-5/6 flex justify-between items-center gap-10 max-md:gap-3 overflow-x-hidden">
         {/*left side Logo */}
         <Link to="/">
           <div className="flex items-center space-x-1 cursor-pointer  max-xms:-ml-2">
