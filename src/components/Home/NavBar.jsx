@@ -8,21 +8,33 @@ import { logout } from "../../features/authSlice";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { useLogoutMutation } from "../../features/usersApiSlice";
+import { useToggleContex } from "../../hooks/ToggleContextProvider";
+import { actionType } from "../../hooks/reducer";
+
 
 const NavBar = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1000px");
 
-  const [isMenueToggled, setIsMenuToggled] = useState(false);
+  const [{toggle}, dispatch] = useToggleContex()
+
+  
+  const handleToggle = () => {
+    dispatch({
+      type: actionType.SET_TOGGLE,
+      toggle: !toggle
+    })
+    console.log(toggle);
+  }
 
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const dispatchh = useDispatch();
 
   const [logoutApiCall] = useLogoutMutation();
 
   const logoutHandler = async () => {
     try {
       await logoutApiCall().unwrap();
-      dispatch(logout());
+      dispatchh(logout());
       toast.warning("you have Log out");
       navigate("/");
     } catch (error) {
@@ -96,7 +108,7 @@ const NavBar = () => {
               )}
               <button
                 className="bg-yellow-300  p-2 max-xms:p-1 rounded-md text-slate-100"
-                onClick={() => setIsMenuToggled(!isMenueToggled)}
+                onClick={handleToggle}
               >
                 <FaBars className="text-3xl focus:outline-none" />
               </button>
@@ -105,7 +117,7 @@ const NavBar = () => {
         )}
       </div>
       {/* <FaBars className="text-3xl z-10 md:hidden" /> */}
-      {isMenueToggled && (
+      {toggle && (
         <>
           <Bounce>
             {" "}
@@ -115,7 +127,7 @@ const NavBar = () => {
      transition-all duration-1000
      "
             >
-              <button onClick={() => setIsMenuToggled(!isMenueToggled)}>
+              <button onClick={handleToggle}>
                 X
               </button>
             </div>

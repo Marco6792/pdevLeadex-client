@@ -69,7 +69,7 @@ const LoginForm = () => {
   return (
     <form className="flex flex-col" onSubmit={handleSubmit}>
       <h2 className="text-3xl text-slate-600  md:-mt-14 md:pb-6 font-semibold text-slate-7 text-center px-3 ">
-        Welcome Back To <span className="text-purple-500">Leadex</span>
+        Welcome Back To <span className="text-red-400">Leadex</span>
       </h2>
       <div className="flex flex-col justify-center mt-8 px-5 space-y-2">
         <label htmlFor="email" className="text-xl text-slate-600">

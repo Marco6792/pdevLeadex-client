@@ -68,7 +68,7 @@ const RegisterForm = () => {
   return (
     <form className="flex flex-col" onSubmit={handleSubmit}>
       <h2 className="text-3xl -mt-12 font-semibold text-slate-7 text-slate-600 text-center">
-        Join Leadex Today
+        Join <span className="text-red-400 font-extrabold">Leadex</span> Today
       </h2>
       <div className="flex flex-col justify-center mt-8 px-5 space-y-2">
         <label htmlFor="username" className="text-xl text-slate-600">
@@ -82,7 +82,7 @@ const RegisterForm = () => {
             required
             placeholder="Enter Username"
             onChange={handleForm}
-            className="border border-slate-400 py-3 text-xl focus:outline-none rounded-md w-full px-14"
+            className="border border-slate-400 py-3 text-xl focus:outline-none rounded-md w-full px-14 max-xms:px-12"
           />
           <div className="bg-slate-300 absolute p-2 left-0 top-0 bottom-0 rounded-tl-md rounded-bl-md">
             <FaUser className="text-2xl mt-2" />
@@ -99,7 +99,7 @@ const RegisterForm = () => {
             required
             placeholder="Enter Email"
             onChange={handleForm}
-            className="border border-slate-400 py-3 px-14 text-xl focus:outline-none rounded-md w-full"
+            className="border border-slate-400 py-3 px-14 max-xms:px-12 text-xl focus:outline-none rounded-md w-full"
           />
           <div className="bg-slate-300 absolute p-2 left-0 top-0 bottom-0 rounded-tl-md rounded-bl-md">
             <FaEnvelope className="text-2xl mt-2" />
@@ -117,7 +117,7 @@ const RegisterForm = () => {
             minLength={4}
             placeholder="Enter Password"
             onChange={handleForm}
-            className="border border-slate-400 py-3 px-14 text-xl focus:outline-none rounded-md w-full"
+            className="border border-slate-400 py-3 px-14 max-xms:px-12 text-xl focus:outline-none rounded-md w-full"
           />
           <div className="bg-slate-300 absolute p-2 left-0 top-0 bottom-0 rounded-tl-md rounded-bl-md">
             <FaFingerprint className="text-2xl mt-2" />
