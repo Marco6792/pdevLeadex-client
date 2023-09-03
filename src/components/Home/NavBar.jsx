@@ -58,8 +58,7 @@ const NavBar = () => {
       <div className="mx-auto max-xms:w-full max-md:w-[90.777%] max-md:px-3 w-5/6 flex justify-between items-center gap-10 max-md:gap-3">
         {/*left side Logo */}
         <Link to="/">
-          <div className="flex items-center space-x-1 cursor-pointer  max-xms:-ml-2">
-            <div className="rounded-full bg-red-400 h-3 w-3"></div>
+          <div className="items-center cursor-pointer">
             <h3
               className="text-slate-600 text-2xl max-xms:text-xl
           "
