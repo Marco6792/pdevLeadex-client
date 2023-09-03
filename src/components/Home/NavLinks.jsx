@@ -55,8 +55,8 @@ const { username } = userInfo;
       opacity: 0,
       height: 0,
       transition: {
-        ease: "easeInOut",
-        duration: 0.5,
+        ease: "ease",
+        duration: 0.9,
         delay: 1,
       },
     },
