@@ -140,8 +140,6 @@ const { username } = userInfo;
                     onClick={handleToggle}
           >contact us</motion.button>
         </Link>
-
-        <Link to='/logout'>
           <motion.button
             initial={{ y: 90, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -155,8 +153,7 @@ const { username } = userInfo;
             onClick={handleActions}
           >
             Log out
-          </motion.button>
-        </Link>
+          </motion.button>     
       </motion.div>
   );
 };
