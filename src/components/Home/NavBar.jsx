@@ -11,8 +11,6 @@ import { useLogoutMutation } from "../../features/usersApiSlice";
 import { useToggleContex } from "../../hooks/ToggleContextProvider";
 import { actionType } from "../../hooks/reducer";
 import { checkOnlineStatus } from "../../hooks/IsOnline";
-import useHeight from "../../hooks/useHeight";
-import BackToTop from "../../scene/ScrollToTopButton";
 
 const NavBar = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1000px");
