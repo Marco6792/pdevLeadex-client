@@ -52,17 +52,18 @@ const LoginForm = () => {
       const res = await login({ email, password }).unwrap();
       toast.success(`welcome ${res.username}`);
       dispatch(setCredentails({ ...res }));
-      isSuccess && navigate("/");
+
+      if(isLoading) {
+        <div className= "fixed w-screen h-screen inset-0 bg-black z-50">Loaging</div>  
+    }else{navigate("/");}
+    
     } catch (err) {
       toast.error(err?.data?.message || err.data);
     }
   };
 
   console.log(isLoading);
-  if(isLoading) {
-      <div className= "fixed w-screen h-screen inset-0 bg-black z-50"></div>
-    
-  }
+ 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
