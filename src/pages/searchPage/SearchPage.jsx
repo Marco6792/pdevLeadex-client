@@ -7,7 +7,7 @@ const SearchPage = () => {
   return (
     <div className="w-screen h-screen mt-20">
     <SearchBar />
-    <h1>Search page here</h1>
+    <h1>Search page</h1>
     <ScrollToTopButton />
     <FixedBottomMenu />
   </div>
