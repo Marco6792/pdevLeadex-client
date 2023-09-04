@@ -5,8 +5,8 @@ import Fade from "react-reveal/Fade";
 const TopDesign = () => {
   return (
     <>
-      <div className="w-screen h-[350px] flex flex-col justify-self-start">
-        <div className="w-screen max-sm:w-[1000px] h-[670px] flex absolute rounded-full bg-[rgb(241, 196, 15)] md:h-[700px] from-from to-to bg-gradient-to-tr -top-[390px] -left-[100px]"></div>
+      <div className="w-screen h-[350px] flex flex-col justify-self-start mt-6">
+        <div className="login  w-screen max-sm:w-[1000px] h-[670px] flex absolute rounded-full bg-[rgb(241, 196, 15)] md:h-[700px] -top-[390px] -left-[100px]"></div>
         <Bounce top>
           <p className="z-10 uppercase text-3xl text-white font-semibold mt-[100px] px-4 max-xms:text-2xl">
             Welcome to{" "}

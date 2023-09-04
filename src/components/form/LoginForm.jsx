@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -16,7 +16,6 @@ const LoginForm = () => {
   const [login, { isLoading, isSuccess }] = useLoginMutation();
 
   const [togglePwd, setTogglePwd] = useState(true);
-
   const handleClickTogglePwd = () => {
     setTogglePwd((togglePwd) => !togglePwd);
   };
@@ -47,20 +46,23 @@ const LoginForm = () => {
   }, [credentials.email, credentials.password]);
 
   const handFormSubmitClick = async () => {
-    // toast.success("your are now Login")
-    console.log(disable);
     try {
       const email = credentials.email;
       const password = credentials.password;
       const res = await login({ email, password }).unwrap();
-      console.log(res.username);
       toast.success(`welcome ${res.username}`);
       dispatch(setCredentails({ ...res }));
-      navigate("/");
+      isSuccess && navigate("/");
     } catch (err) {
       toast.error(err?.data?.message || err.data);
     }
   };
+
+  console.log(isLoading);
+  if(isLoading) {
+      <div className= "fixed w-screen h-screen inset-0 bg-black z-50"></div>
+    
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -68,11 +70,11 @@ const LoginForm = () => {
 
   return (
     <form className="flex flex-col" onSubmit={handleSubmit}>
-      <h2 className="text-3xl text-slate-600  md:-mt-14 md:pb-6 font-semibold text-slate-7 text-center px-3 ">
+      <h2 className="text-3xl text-white opacity-90  md:-mt-14 md:pb-6 font-semibold text-slate-7 text-center px-3 ">
         Welcome Back To <span className="text-red-400">Leadex</span>
       </h2>
-      <div className="flex flex-col justify-center mt-8 px-5 space-y-2">
-        <label htmlFor="email" className="text-xl text-slate-600">
+      <div className="flex flex-col justify-center mt-8 px-5 space-y-3">
+        <label htmlFor="email" className="text-base text-white opacity-90">
           Emial address
         </label>
         <div className="relative flex flex-col items-center justify-center">
@@ -88,7 +90,7 @@ const LoginForm = () => {
           </div>
         </div>
 
-        <label htmlFor="password" className="text-xl text-slate-600">
+        <label htmlFor="password" className="text-base text-white opacity-90">
           password
         </label>
         <div className="relative flex flex-col items-center justify-center">
@@ -115,12 +117,12 @@ const LoginForm = () => {
           )}
           {/* <FaEye  className='absolute right-3 text-xl'/> */}
         </div>
-        <div className="py-5 flex items-center justify-between ">
-          <p className="text-base max-sm:w-[171px]">
+        <div className="py-5 flex items-center justify-between">
+          <p className="text-base max-sm:w-[171px] text-white">
             Don't have an account ?
             <Link
               to="/register"
-              className="text-blue-900 px-2 text-xl underline"
+              className="text-blue-600 px-2 text-xl underline"
             >
               Sign Up
             </Link>

@@ -10,18 +10,18 @@ import LoginForm from "./components/form/LoginForm";
 import ProfilePage from "./pages/ProfilePage";
 import CoursePage from "./pages/CoursePage";
 import NavBar from "./components/Home/NavBar";
-import Welcomepe from "./pages/Welcomepe";
+// import Welcomepe from "./pages/Welcomepe";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import OnlineCheck from "./scene/OnlineCheck";
+import BooksPage from "./pages/BooksPage";
+import SearchPage from "./pages/SearchPage";
+import StudyPage from "./pages/StudyPage";
+import PapersPage from "./pages/PapersPage";
+import QuizzePage from "./pages/QuizzePage";
 
 const App = () => {
 
-// const [showComp, setShowComp] = useState(true)
-
-// setTimeout(() => {
-//   setShowComp(false)
-// }, 2000);
 
   return (
     
@@ -29,10 +29,7 @@ const App = () => {
     <ToastContainer />
       <NavBar />
     <OnlineCheck />
-    <Routes >
-    
-    <Route path="/welcome" element={<Welcomepe />}/>
-
+    <Routes > 
     <Route path="/" element={<Home />}/>
 
      <Route element={<FormIndex />}>
@@ -43,6 +40,11 @@ const App = () => {
        <Route path='/profile' element={<ProfilePage />} />
        <Route path='/courses' element={<CoursePage />} />
        <Route path='/about' element={<AboutPage />} />
+       <Route path='/books' element={<BooksPage />} />
+       <Route path='/search' element={<SearchPage />} />
+       <Route path='/study' element={<StudyPage />} />
+       <Route path='/papers' element={<PapersPage/>} />
+       <Route path='/quiz' element={<QuizzePage/>} />
        <Route path='/contact' element={<ContactPage />} />
     </Routes>
     </BrowserRouter>

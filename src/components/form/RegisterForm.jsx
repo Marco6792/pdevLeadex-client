@@ -71,7 +71,7 @@ const RegisterForm = () => {
         Join <span className="text-red-400 font-extrabold">Leadex</span> Today
       </h2>
       <div className="flex flex-col justify-center mt-8 px-5 space-y-2">
-        <label htmlFor="username" className="text-xl text-slate-600">
+        <label htmlFor="username" className=" text-gray-200 text-base">
           userName
         </label>
         <div className="relative flex flex-col items-center justify-center">
@@ -89,7 +89,7 @@ const RegisterForm = () => {
           </div>
         </div>
 
-        <label htmlFor="email" className="text-xl text-slate-600">
+        <label htmlFor="email" className=" text-gray-200 text-base">
           Emial address
         </label>
         <div className="relative flex flex-col items-center justify-center">
@@ -106,7 +106,7 @@ const RegisterForm = () => {
           </div>
         </div>
 
-        <label htmlFor="password" className="text-xl text-slate-600">
+        <label htmlFor="password" className=" text-gray-200 text-base">
           password
         </label>
         <div className="relative flex flex-col items-center justify-center">
@@ -137,9 +137,9 @@ const RegisterForm = () => {
           {/* <FaEye  className='absolute right-3 text-xl'/> */}
         </div>
         <div className="py-5 flex items-center justify-between ">
-          <p className="text-base max-sm:w-[150px]">
+          <p className="text-base max-sm:w-[150px] text-white">
             Already have an account
-            <Link to="/login" className="text-blue-900 px-2 text-xl underline">
+            <Link to="/login" className="text-blue-500 px-2 text-xl underline">
               Login
             </Link>
           </p>
