@@ -1,13 +1,14 @@
 import React, { useState, useContext } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion"; 
 import { Link, useNavigate } from "react-router-dom";
 
-import { useLogoutMutation } from "../../features/usersApiSlice";
+import { useLogoutMutation } from "../../features/usersApiSlice"; 
 import { logout } from "../../features/authSlice";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { useToggleContex } from "../../hooks/ToggleContextProvider";
 import { actionType } from "../../hooks/reducer";
+
 
 const NavLinks = () => {
   const navigate = useNavigate();
@@ -20,15 +21,12 @@ const NavLinks = () => {
       type: actionType.SET_TOGGLE,
       toggle: !toggle
     })
-    console.log(toggle);
   }
 
   const userInfo = localStorage.getItem("userInfo")
   ? JSON.parse(localStorage.getItem("userInfo"))
   : "";
 const { username } = userInfo;
-
-  const [isMenueToggled, setIsMenuToggled] = useState(false);
 
   const [logoutApiCall] = useLogoutMutation();
 
@@ -64,8 +62,9 @@ const { username } = userInfo;
   
   return (
     <AnimatePresence >
+      {toggle &&
       <motion.div
-        className="flex flex-col h-screen bg-black w-screen items-center absolute left-0 top-0 justify-center text-white space-y-14 text-xl z-50 "
+        className="flex flex-col h-screen bg-black w-screen items-center absolute inset-0 justify-center text-white space-y-14 text-xl z-40 "
         variants={item}
         initial={{ height: 0, opacity: 0 }}
         animate={{ height: "100vh", opacity: 1 }}
@@ -161,6 +160,7 @@ const { username } = userInfo;
             Log out
           </motion.button>     
       </motion.div>
+}
       </AnimatePresence>
   );
 };

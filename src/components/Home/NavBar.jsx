@@ -64,7 +64,7 @@ const NavBar = () => {
 
   return (
     <div
-      className={`${isFixed && "fixed"} top-0 w-screen transition-all duration-700 ease-in z-10 backdrop-blur-lg backdrop-filter bg-opacity-80`}
+      className={`fixed top-0 w-screen transition-all duration-700 ease-in z-10 backdrop-blur-lg backdrop-filter bg-opacity-80`}
     >
       <div
         className={`${

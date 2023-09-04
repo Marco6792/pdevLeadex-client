@@ -29,7 +29,7 @@ const ScrollToTopButton = () => {
     <button
       className={`${
         isVisible ? "block" : "hidden"
-      } fixed bottom-20 text-2xl right-4 border border-slate-500 text-white p-2 rounded-md shadow-md z-50`}
+      } fixed bottom-20 text-2xl right-4 border border-slate-500 text-white p-2 rounded-md shadow-md z-40`}
       onClick={scrollToTop}
     >
      <FaArrowUp />
