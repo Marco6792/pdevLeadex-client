@@ -19,12 +19,12 @@ const NavLinks = () => {
   const handleClick = () => {
     window.location.href = `https://pdvleadex.netlify.app/profile`
   };
-  const handleToggle = () => {
+  const handleToggle = async() => {
     dispatch({
       type: actionType.SET_TOGGLE,
       toggle: !toggle
     })
-    handleClick()
+    window.location.reload();
   }
 
   const userInfo = localStorage.getItem("userInfo")
