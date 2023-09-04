@@ -15,7 +15,7 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import OnlineCheck from "./scene/OnlineCheck";
 import BooksPage from "./pages/BooksPage";
-import SearchPage from "./pages/SearchPage/SearchPage";
+import SearchPage from "./pages/searchPage/SearchPage";
 import StudyPage from "./pages/StudyPage";
 import PapersPage from "./pages/PapersPage";
 import QuizzePage from "./pages/QuizzePage";
