@@ -127,7 +127,7 @@ const NavBar = () => {
                   to="/profile"
                   className="text-slate-600 text-xl capitalize"
                 >
-                  {username}
+                <FaUser className="text-green-500"/>
                 </Link>
               ) : (
                 <Link
