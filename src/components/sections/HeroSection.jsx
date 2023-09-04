@@ -1,9 +1,10 @@
 import React from 'react'
+import Testing from './Testing';
 
 const HeroSection = () => {
 
   const handleClick = () => {
-    // Load the page in the browser
+    console.log("");
     window.location.href = "https://pdvleadex.netlify.app/courses";
   };
 
@@ -16,6 +17,7 @@ const HeroSection = () => {
     >
       Get Started
     </button>
+    <Testing />
   </div>
   )
 }

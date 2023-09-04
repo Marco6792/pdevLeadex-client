@@ -16,11 +16,15 @@ const NavLinks = () => {
 
   const [{toggle}, dispatch] = useToggleContex()
 
+  const handleClick = () => {
+    window.location.href = `https://pdvleadex.netlify.app/profile`
+  };
   const handleToggle = () => {
     dispatch({
       type: actionType.SET_TOGGLE,
       toggle: !toggle
     })
+    handleClick()
   }
 
   const userInfo = localStorage.getItem("userInfo")
@@ -59,7 +63,9 @@ const { username } = userInfo;
       },
     },
   };
-  
+
+
+
   return (
     <AnimatePresence >
       {toggle &&
