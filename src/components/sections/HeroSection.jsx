@@ -4,7 +4,7 @@ const HeroSection = () => {
 
   const handleClick = () => {
     // Load the page in the browser
-    window.location.href = "https://pdvleadex/courses";
+    window.location.href = "https://pdvleadex.netlify.app/courses";
   };
 
   return (
