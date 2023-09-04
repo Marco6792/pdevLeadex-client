@@ -6,7 +6,7 @@ const FixedBottomMenu = () => {
   const active = "bg-red-500";
 
   return (
-    <div className="md:hidden fixed bottom-0 inset-x-0 rounded-t-xl max:md:max-w-2xl mx-auto  bg-gray-900 py-4 z-50 max-sm:full">
+    <div className="md:hidden fixed bottom-0 inset-x-0 rounded-t-xl max:md:max-w-2xl mx-auto  bg-gray-900 py-4 z-40 max-sm:full">
       <ul className="flex justify-between px-3 items-center">
         <li className="font-mono">
           <NavLink
