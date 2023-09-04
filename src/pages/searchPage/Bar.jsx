@@ -1,4 +1,6 @@
 import React from "react";
+import { FaSearch } from "react-icons/fa";
+
 
 const Bar = () => {
   return (
@@ -6,9 +8,9 @@ const Bar = () => {
       <input
         type="text"
         placeholder="ask any topic"
-        className="py-3 px-3 border border-blue-500 w-full rounded-md focus:outline-none"
+        className="py-4 px-3 border border-slate-500 w-full rounded-md focus:ring-1 ring-offset-1 focus:outline-none bg-gray-900 text-white focus:border-0"
       />
-      <FaSearch className="absolute right-7 text-xl text-gray-700" />
+      <FaSearch className="absolute right-7 text-xl text-gray-700 " />
     </div>
   );
 };
