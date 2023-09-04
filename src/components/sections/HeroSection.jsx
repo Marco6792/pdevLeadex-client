@@ -15,7 +15,7 @@ const HeroSection = () => {
     <button className="bg-white text-blue-500 py-2 px-4 rounded-lg shadow-md hover:bg-blue-200"
     onClick={handleClick}
     >
-      Get Started
+      Get Started Now
     </button>
     <Testing />
   </div>
