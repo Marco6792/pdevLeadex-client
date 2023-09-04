@@ -53,9 +53,7 @@ const LoginForm = () => {
       toast.success(`welcome ${res.username}`);
       dispatch(setCredentails({ ...res }));
 
-      if(isLoading) {
-        <div className= "fixed w-screen h-screen inset-0 bg-black z-50">Loaging</div>  
-    }else{navigate("/");}
+      navigate("/");
     
     } catch (err) {
       toast.error(err?.data?.message || err.data);
