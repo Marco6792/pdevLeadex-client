@@ -27,13 +27,11 @@ const OnlineCheck = () => {
   if(isOnline) {
   setTimeout(() => {
     setIsShow('hide')
-    console.log(isShow);
   }, 3000);
   }
   if(!isOnline) {
     setTimeout(() => {
       setIsShow('hide')
-      console.log(isShow);
     }, 3000);
     }
   
@@ -44,7 +42,7 @@ const OnlineCheck = () => {
         <div
           className={`${
             isOnline ? "text-green-400" : "text-red-400"
-          } tree  z-40  w-fit shadow-lg  ${isShow ==='hide' ? 'hidden': isShow === 'show' ? "fixed" : ""}`}
+          } tree  w-fit shadow-lg  ${isShow ==='hide' ? 'hidden': isShow === 'show' ? "fixed  z-50" : ""}`}
         >
           {isOnline ? "online" : "offline"}
         </div>
