@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import ScrollToTopButton from "../../scene/ScrollToTopButton";
 import FixedBottomMenu from "../../components/sections/FixedBottomMenu";
 import SearchBar from './searchBar';
