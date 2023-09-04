@@ -24,7 +24,7 @@ const NavLinks = () => {
       type: actionType.SET_TOGGLE,
       toggle: !toggle
     })
-    window.location.reload();
+    // window.location.reload();
   }
 
   const userInfo = localStorage.getItem("userInfo")
