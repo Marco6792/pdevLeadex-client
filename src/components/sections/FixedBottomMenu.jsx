@@ -1,41 +1,59 @@
-import React from "react";
-import { FaBook, FaPager, FaPeopleCarry, FaQuestion, FaSearch } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import {
+  FaBook,
+  FaPager,
+  FaPeopleCarry,
+  FaQuestion,
+  FaSearch,
+} from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import OverLay from "../form/OverLay";
 
 const FixedBottomMenu = () => {
-  const active = "bg-red-500";
+  const [showOverlay, setShowOverlay] = useState(false);
+
+  const handleLinkClick = () => {
+    setShowOverlay((prev) => !prev);
+    setTimeout(() => {
+      setShowOverlay((prev) => !prev);
+    }, 1000);
+  };
 
   return (
     <div className="md:hidden fixed bottom-0 inset-x-0 rounded-t-xl max:md:max-w-2xl mx-auto  bg-gray-900 py-4 z-10 max-sm:full">
       <ul className="flex justify-between px-3 items-center">
-        <li className="font-mono">
+        <li className="font-mono" onClick={handleLinkClick}>
           <NavLink
             to="/books"
-            // className="flex flex-col items-center"
-            // activeClassName="bg-red"
             className={({ isActive }) =>
               isActive
                 ? "text-blue-600 flex flex-col items-center"
                 : "flex flex-col items-center text-white"
             }
           >
+            {showOverlay && <OverLay />}
             <FaBook />
             <p className="text-[13px]  font-bold">Books</p>
           </NavLink>
         </li>
-        <li className="font-mono ">
-          <NavLink to='/Search'
+        <li
+          className="font-mono  onClick={handleLinkClick}
+"
+        >
+          <NavLink
+            to="/Search"
             className={({ isActive }) =>
               isActive
                 ? "text-blue-600   flex flex-col items-center"
                 : "flex flex-col items-center text-white"
             }
           >
+            {showOverlay && <OverLay />}
             <FaSearch />
             <p className="text-[12px]  font-bold">Search</p>
           </NavLink>
         </li>
-        <li className="font-mono">
+        <li className="font-mono" onClick={handleLinkClick}>
           <NavLink
             to="/study"
             className={({ isActive }) =>
@@ -44,11 +62,12 @@ const FixedBottomMenu = () => {
                 : "flex flex-col items-center text-white"
             }
           >
+            {showOverlay && <OverLay />}
             <FaPeopleCarry />
             <p className="text-[12px]  font-bold">study</p>
           </NavLink>
         </li>
-        <li className="font-mono">
+        <li className="font-mono" onClick={handleLinkClick}>
           <NavLink
             to="/papers"
             className={({ isActive }) =>
@@ -57,11 +76,12 @@ const FixedBottomMenu = () => {
                 : "flex flex-col items-center text-white"
             }
           >
-            <FaPager/>
+            {showOverlay && <OverLay />}
+            <FaPager />
             <p className="text-[12px]  font-bold">papers</p>
           </NavLink>
         </li>
-        <li className="">
+        <li className="font-mono" onClick={handleLinkClick}>
           <NavLink
             to="/quiz"
             className={({ isActive }) =>
@@ -70,7 +90,8 @@ const FixedBottomMenu = () => {
                 : "flex flex-col items-center text-white"
             }
           >
-            <FaQuestion/>
+            {showOverlay && <OverLay />}
+            <FaQuestion />
             <p className="text-[12px] font-bold">Quizzes</p>
           </NavLink>
         </li>
