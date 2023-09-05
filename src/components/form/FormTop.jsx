@@ -4,10 +4,11 @@ import Bounce from "react-reveal/Bounce"
 
 const FormTop = () => {
   return (
-    <div className="flex flex-col justify-center md:h-[450px] w-full items-center max-sm:h-full ">
-    <div className="relative overflow-hidden w-full h-full  flex flex-col md:w-[500px]">
+    <div className=" flex-col justify-center w-full items-center ">
+    <div className="relative overflow-hidden w-full   flex  md:w-[500px] -z-10">
 
-    <Bounce right><TopDesign /></Bounce>
+    <Bounce right>
+      <TopDesign /></Bounce>
       </div>
   </div>
   )

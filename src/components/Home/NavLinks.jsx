@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion"; 
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 
 import { useLogoutMutation } from "../../features/usersApiSlice"; 
 import { logout } from "../../features/authSlice";
@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { useToggleContex } from "../../hooks/ToggleContextProvider";
 import { actionType } from "../../hooks/reducer";
+import OverLay from "../form/OverLay";
 
 
 const NavLinks = () => {
@@ -16,9 +17,6 @@ const NavLinks = () => {
 
   const [{toggle}, dispatch] = useToggleContex()
 
-  const handleClick = () => {
-    window.location.href = `https://pdvleadex.netlify.app/profile`
-  };
   const handleToggle = async() => {
     dispatch({
       type: actionType.SET_TOGGLE,
@@ -32,8 +30,9 @@ const NavLinks = () => {
   : "";
 const { username } = userInfo;
 
-  const [logoutApiCall] = useLogoutMutation();
+  const [logoutApiCall ,{isLoading}] = useLogoutMutation();
 
+  let ldg = true
   const logoutHandler = async () => {
     try {
       await logoutApiCall().unwrap();
@@ -43,14 +42,20 @@ const { username } = userInfo;
       }else{ toast.warning("you have Log out")}  
       navigate("/");
     } catch (error) {
-      console.log(error);
+     const  status = error.status
+      if(status == 500) {
+         ldg = true
+      }
     }
+  console.log(ldg);
   };
 
+  
   const handleActions = () =>{
-  handleToggle()
-  logoutHandler()
+    // handleToggle()
+    logoutHandler()
   }
+  console.log(ldg);
 
   const item = {
     exit: {
@@ -164,7 +169,8 @@ const { username } = userInfo;
             onClick={handleActions}
           >
             Log out
-          </motion.button>     
+          </motion.button>  
+          {isLoading && <OverLay />}   
       </motion.div>
 }
       </AnimatePresence>

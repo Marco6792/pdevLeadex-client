@@ -54,7 +54,7 @@ const LoginForm = () => {
   return (
     <>
       {isLoading ? <OverLay /> : null}
-      <form className="flex flex-col" onSubmit={handleSubmit}>
+      <form className="" onSubmit={handleSubmit}>
         <h2 className="text-3xl text-white opacity-90  md:-mt-14 md:pb-6 font-semibold text-slate-7 text-center px-3 ">
           Welcome Back To <span className="text-red-400">Leadex</span>
         </h2>

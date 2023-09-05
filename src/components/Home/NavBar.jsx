@@ -134,7 +134,7 @@ const NavBar = () => {
                   to="/login"
                   className="text-slate-600 text-xl"
                 >
-                  {<FaUser />}
+                  {<FaUser/>}
                 </Link>
               )}
               <button
