@@ -7,7 +7,7 @@ import { FaEnvelope, FaEye, FaEyeSlash, FaFingerprint } from "react-icons/fa";
 import OverLay from "./OverLay";
 import { toast } from "react-toastify";
 
-const LoginForm = () => {
+const LoginForm = ({isloading}) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [login, {isLoading}] = useLoginMutation();
@@ -50,10 +50,13 @@ const LoginForm = () => {
   const handleSubmit = useCallback((e) => {
     e.preventDefault();
   }, []);
+  
+  isloading = isLoading
+  console.log(isloading);
 
   return (
     <>
-      {isLoading ? <OverLay /> : null}
+     {isLoading && <OverLay />}
       <form className="" onSubmit={handleSubmit}>
         <h2 className="text-3xl text-white opacity-90  md:-mt-14 md:pb-6 font-semibold text-slate-7 text-center px-3 ">
           Welcome Back To <span className="text-red-400">Leadex</span>
