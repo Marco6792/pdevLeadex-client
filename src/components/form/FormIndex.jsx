@@ -15,7 +15,7 @@ const FormIndex = ({isloading}) => {
 
   return (<>
    {loading && <OverLay />}
-    <div className=" flex flex-col z-20 fixed top-0 bg-white justify-center h-screen w-full items-center max-sm:h-full ">
+    <div className="gradient flex flex-col z-20 fixed top-0 justify-center h-screen w-full items-center max-sm:h-full ">
 
       <Link to="/" className='text-2xl text-gray-700 fixed max-md:top-4 z-40 bg-white px-6 py-1 rounded-md md:top-2 md:left-5 backdrop-blur-lg bafi'>
       <FaArrowLeft />
