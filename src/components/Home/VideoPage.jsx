@@ -9,7 +9,7 @@ const VideoPage = () => {
         <ReactPlayer
         //url="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4"
         // url="https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4"
-        url="https://vimeo.com/860706802?share=copy"
+        url="https://vimeo.com/861833073"
         playing={true}
         controls={true}
         // volume={null}
