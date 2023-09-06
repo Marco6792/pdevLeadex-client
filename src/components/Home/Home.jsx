@@ -4,7 +4,7 @@ import HeroSection from "../sections/HeroSection";
 import ScrollToTopButton from "../../scene/ScrollToTopButton";
 import FixedBottomMenu from "../sections/FixedBottomMenu";
 import OverLay from "../form/OverLay";
-
+import VideoPage from './VideoPage'
 const Home = () => {
 
   return (
