@@ -31,9 +31,7 @@ html, body{
     display: none;
   }
 
-.bg-red{
-  background-color: red;
-}
+
 @layer components {
   .video {
     @apply w-4/5 rounded-md border max-w-xl max-sm:w-24;
