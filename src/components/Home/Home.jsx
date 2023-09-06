@@ -13,25 +13,8 @@ const Home = () => {
       <div className="h-screen w-screen">
         {/* <NavBar /> */}
          <HeroSection />
-         <HeroSection />
-         <HeroSection />
-         <HeroSection />
-         <HeroSection />
-         <HeroSection />
-         <HeroSection />
-         <HeroSection />
-         <HeroSection />
-         <HeroSection />
-         <HeroSection />
-         <HeroSection />
-         <HeroSection />
-         <HeroSection />
-         <HeroSection />
-         <HeroSection />
-         <HeroSection />
-         <HeroSection />
          <ScrollToTopButton />
-        {/* <VideoPage /> */}
+        <VideoPage />
         <FixedBottomMenu />
       </div>
       <Outlet />
